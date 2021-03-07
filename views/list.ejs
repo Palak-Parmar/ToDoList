@@ -7,14 +7,18 @@
     <title>List</title>
   </head>
   <body>
-    <h1><%= KindOfDay %></h></h1>
+    <h1><%= KindOfDay %> </h1>
 <ul>
   <li>Buy food</li>
   <li>Cook food</li>
   <li>Eat food</li>
+
+<%  for(var i=0; i<newItems.length; i++){  %>
+    <li><%= newItems[i] %></li>
+<%  }  %>
 </ul>
-<form class="" action="/>" method="post">
-<input type="text" name="newval" >
+<form class="" action="/" method="post">
+<input type="text" name="newVal" >
 <button type="button" name="button">Add</button>
 
 </form>
