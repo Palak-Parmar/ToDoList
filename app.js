@@ -5,12 +5,13 @@ const bodyParser = require("body-parser");
 
 const app = express();
 app.use(bodyParser.urlencoded({extended:true}));
-var items = [];
+app.use(express.static(__dirname + "public"));  
+let items = [];
 app.set('view engine', 'ejs');
 
 app.get("/", function(req, res){
-var today= new Date();
-var options=
+let today= new Date();
+let options=
 {
   weekday :"long",
   year:"numeric",
@@ -18,14 +19,14 @@ var options=
   day:"numeric"
 };
 
-var day = today.toLocaleDateString("en-US",options);
+let day = today.toLocaleDateString("en-US",options);
 
 res.render("list", {KindOfDay:day, newItems:items });
 });
 
 app.post("/",function(req,res)
 {
-  var item = req.body.newVal;
+  let item = req.body.newVal;
   items.push(item);
   res.redirect("/");
 });
