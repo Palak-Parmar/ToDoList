@@ -1,15 +1,10 @@
 <!-- //base template for to do list -->
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>List</title>
-  </head>
+<%- include('header'); -%>
+
   <body>
     <div class="box" id="heading">
-           <h1><%= KindOfDay %> </h1>
+           <h1><%= listTitle %> </h1>
     </div>
    <div class="box">
        <%  for(let i=0; i<newItems.length; i++){  %>
@@ -20,11 +15,10 @@
        <%  }  %>
           <form class="" action="/" method="post">
           <input type="text" name="newVal" placeholder="New Item" autocomplete="off" >
-          <button type="submit" name="button">+</button>
+          <button type="submit" name="list" value= <%= listTitle %> </button>+</button>
           </form>
      </div>
-
-
    </div>
   </body>
-</html>
+
+<%- include('footer');  -%>
